@@ -1,3 +1,6 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": ["next/core-web-vitals", "airbnb", "plugin:prettier/recommended"],
+	"rules": {
+		"quotes": [2, "single", { "avoidEscape": true }]
+	}
 }

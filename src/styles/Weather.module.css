@@ -1,0 +1,115 @@
+.weather {
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	min-width: 250px;
+}
+
+.resultFor {
+	display: flex;
+	font-size: 0.9rem;
+	color: gainsboro;
+	gap: 5px;
+}
+
+.resultFor button {
+	background-color: transparent;
+	color: rgb(82, 168, 255);
+	border: none;
+	cursor: pointer;
+}
+
+.resultFor button:hover {
+	text-decoration: underline;
+}
+
+.info {
+	display: flex;
+	gap: clamp(10px, 20vw, 250px);
+}
+
+.icon {
+	display: flex;
+	color: gainsboro;
+}
+
+.icon div {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	height: 64px;
+	width: 150px;
+	position: relative;
+}
+
+.icon div p {
+	font-size: 3rem;
+}
+.icon div span {
+	font-size: 1rem;
+	height: 47px;
+	width: max-content;
+	padding-left: 5px;
+}
+
+.icon button {
+	background-color: transparent;
+	color: rgb(175, 175, 175);
+	border: none;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.temp {
+	font-size: 2rem;
+}
+
+.stats {
+	padding-top: 1rem;
+	font-size: small;
+	color: rgb(175, 175, 175);
+	width: max-content;
+}
+
+.date {
+	font-size: 0.9rem;
+	color: gainsboro;
+	text-align: end;
+	width: max-content;
+  padding-top: 9px;
+}
+
+.date p {
+	padding: 1px 0;
+}
+
+.clima {
+	font-size: large;
+	color: white;
+}
+
+.graph {
+	display: none;
+}
+
+@media (max-width: 420px) {
+	.info {
+		gap: clamp(0px, 10vw, 50px);
+	}
+	.info > * {
+		font-size: 10px !important;
+	}
+  .icon div p {
+    font-size: 2.2rem;
+  }
+  .icon div button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 330px) {
+	.info {
+		gap: 0px
+	}
+}

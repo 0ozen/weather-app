@@ -16,7 +16,7 @@ export default function searchResult({ city, state }: Props) {
 
 export async function getServerSideProps({ query }: any) {
 	try {
-		const res = await fetch("/api/current-weather", {
+		const res = await fetch(`${process.env.APIpath || "http://localhost:3000" }/api/current-weather`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

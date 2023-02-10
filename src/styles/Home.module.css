@@ -17,6 +17,7 @@
 	width: 100%;
 	z-index: 2;
 	font-family: var(--font-mono);
+  margin-bottom: 3rem;
 }
 
 .description a {

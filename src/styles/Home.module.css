@@ -1,9 +1,9 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
-	padding: 5rem;
+  justify-content: center;
+	padding: 3rem;
 	padding-bottom: 2rem;
 	min-height: 100vh;
 }
@@ -97,10 +97,12 @@
 
 .footer {
 	margin-top: 5rem;
+  padding-bottom: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+  width: 100%;
 }
 
 /* Enable hover only on non-touch devices */

@@ -27,9 +27,7 @@ function Layout({ children }: childrenType) {
 					href="https://myportfolio003.netlify.app"
 					target="_blank"
 					rel="noopener noreferrer">
-					<div>
-						<code>{`{Developed By jhean}`}</code>
-					</div>
+					<code>{`{Developed By jhean}`}</code>
 				</a>
 			</div>
 		</>

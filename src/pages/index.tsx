@@ -24,19 +24,6 @@ export default function Home() {
 					<h3>Example result:</h3>
 					<Weather state={{ fail: false, error: "" }} city={example}></Weather>
 				</div>
-
-				{/* <a
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-						className={styles.card}
-						target="_blank"
-						rel="noopener noreferrer">
-						<h2 className={inter.className}>
-							example <span>-&gt;</span>
-						</h2>
-						<p className={inter.className}>
-							Find in-depth information about Next.js features and&nbsp;API.
-						</p>
-					</a> */}
 			</div>
 		</>
 	);

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
+import Navbar from "./Navbar";
 
 interface childrenType {
 	children: React.ReactNode;
@@ -18,15 +19,19 @@ function Layout({ children }: childrenType) {
 
 				{children}
 
-				<a
-					className={styles.ref}
-					href="https://myportfolio003.netlify.app"
-					target="_blank"
-					rel="noopener noreferrer">
-					<div>
-						<code>{`{Developed By jhean}`}</code>
-					</div>
-				</a>
+				<div className={styles.footer}>
+					<Navbar></Navbar>
+
+					<a
+						className={styles.ref}
+						href="https://myportfolio003.netlify.app"
+						target="_blank"
+						rel="noopener noreferrer">
+						<div>
+							<code>{`{Developed By jhean}`}</code>
+						</div>
+					</a>
+				</div>
 			</main>
 		</>
 	);

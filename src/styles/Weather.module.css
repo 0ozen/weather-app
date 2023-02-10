@@ -77,7 +77,7 @@
 	color: gainsboro;
 	text-align: end;
 	width: max-content;
-  padding-top: 9px;
+	padding-top: 9px;
 }
 
 .date p {
@@ -93,23 +93,144 @@
 	display: none;
 }
 
-@media (max-width: 420px) {
-	.info {
-		gap: clamp(0px, 10vw, 50px);
-	}
-	.info > * {
-		font-size: 10px !important;
-	}
-  .icon div p {
-    font-size: 2.2rem;
-  }
-  .icon div button {
-    font-size: 1rem;
-  }
+.hidd {
+	display: none;
 }
 
-@media (max-width: 330px) {
+.feelslike {
+	font-size: small;
+	color: rgb(175, 175, 175);
+}
+
+.menu img {
+	width: 24px;
+	height: 24px;
+}
+
+.tempSelect {
+	display: flex;
+	flex-direction: column;
+	background: #232526;
+	background: -webkit-linear-gradient(to right, #414345, #3e4040);
+	background: linear-gradient(to right, #414345, #3e4040);
+	width: max-content;
+	padding: 10px;
+	border-radius: 10px;
+	position: absolute;
+	right: 0;
+	top: 40px;
+	user-select: none;
+}
+
+.tempSelect div {
+	padding: 5px 0;
+}
+
+.tempSelect input[type="radio" i] {
+	-webkit-appearance: none;
+	appearance: none;
+	font: inherit;
+	color: cornflowerblue;
+	width: 0.7rem;
+	height: 0.7rem;
+	border: 1px solid cornflowerblue;
+	border-radius: 50%;
+}
+
+.tempSelect input[type="radio" i]:hover {
+	box-shadow: 1px 1px 10px cornflowerblue;
+}
+
+.tempSelect input[type="radio" i]:checked {
+	background-color: rgb(58, 98, 173);
+}
+
+.tempSelect label {
+	cursor: pointer;
+}
+
+.showMenuFalse {
+	visibility: hidden;
+}
+
+@media (max-width: 420px) {
+	.hidd {
+		display: initial;
+	}
+
+	.hidd2 {
+		display: none;
+	}
+
+	.menu {
+		background-color: transparent;
+		border: none;
+		width: 42px;
+		height: 42px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+
 	.info {
-		gap: 0px
+		flex-direction: column-reverse;
+		gap: 0;
+		position: relative;
+		width: 90vw;
+	}
+
+	.date {
+		font-weight: bold;
+		padding-bottom: 10px;
+	}
+
+	.date :nth-child(n + 2) {
+		width: 10px;
+		height: 10px;
+	}
+
+	.date :nth-child(n + 2) {
+		display: none;
+	}
+
+	.tempOptions {
+		display: none;
+	}
+
+	.icon div {
+		width: max-content;
+		display: flex;
+		flex-direction: column;
+		height: 3rem;
+		align-items: flex-start;
+	}
+
+	.temp {
+		display: flex;
+	}
+
+	.icon div span {
+		font-size: 3rem;
+	}
+
+	.icon {
+		justify-content: flex-end;
+		align-items: center;
+		flex-direction: row-reverse;
+	}
+
+	.stats {
+		position: absolute;
+		right: 0;
+		bottom: 0px;
+	}
+
+	.icon div button {
+		font-size: 1rem;
 	}
 }

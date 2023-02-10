@@ -1,0 +1,58 @@
+.navbar {
+	display: flex;
+	gap: clamp(50px, 10vw, 100px);
+	user-select: none;
+  margin-bottom: 2rem;
+}
+
+.navbar div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 48px;
+	height: 48px;
+}
+
+.navbar a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-sizing: content-box;
+	justify-content: space-between;
+	width: 48px;
+	height: 72px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	border: 1px solid rgba(var(--card-border-rgb), 0.15);
+	border-color: transparent;
+}
+.homeIcon {
+	width: clamp(30px, 4vw, 48px);
+	height: clamp(30px, 4vw, 48px);
+}
+.githubIcon {
+	width: clamp(24px, 4vw, 40px);
+	height: clamp(24px, 4vw, 40px);
+}
+.label {
+	padding: 2px 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.navbar a:hover {
+		background: rgba(var(--card-rgb), 0.1);
+	}
+
+	.navbar a:active {
+		background: rgba(var(--card-rgb), 0.1);
+		border: 1px solid rgba(var(--card-border-rgb), 0.15);
+	}
+}
+
+@media (hover: none) {
+	.navbar a:active {
+		background: rgba(var(--card-rgb), 0.1);
+		border: 1px solid rgba(var(--card-border-rgb), 0.15);
+	}
+}

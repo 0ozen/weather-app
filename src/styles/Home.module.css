@@ -51,15 +51,16 @@
 	justify-content: center;
 	width: var(--max-width);
 	max-width: 100%;
-  margin-top: 2rem;
+	margin-top: 2rem;
+	height: 50vh;
 }
 
 .center h3 {
-  font-family: monospace;
-  font-size: large;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: underline;
+	font-family: monospace;
+	font-size: large;
+	text-align: center;
+	padding: 10px 0;
+	text-decoration: underline;
 }
 
 .card {
@@ -95,11 +96,11 @@
 }
 
 .footer {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Enable hover only on non-touch devices */
@@ -127,10 +128,9 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-
-  .main {
-    padding: 1rem 1rem ;
-  }
+	.main {
+		padding: 1rem 1rem;
+	}
 
 	.content {
 		padding: 4rem;

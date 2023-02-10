@@ -18,21 +18,20 @@ function Layout({ children }: childrenType) {
 				</div>
 
 				{children}
-
-				<div className={styles.footer}>
-					<Navbar></Navbar>
-
-					<a
-						className={styles.ref}
-						href="https://myportfolio003.netlify.app"
-						target="_blank"
-						rel="noopener noreferrer">
-						<div>
-							<code>{`{Developed By jhean}`}</code>
-						</div>
-					</a>
-				</div>
 			</main>
+			<div className={styles.footer}>
+				<Navbar></Navbar>
+
+				<a
+					className={styles.ref}
+					href="https://myportfolio003.netlify.app"
+					target="_blank"
+					rel="noopener noreferrer">
+					<div>
+						<code>{`{Developed By jhean}`}</code>
+					</div>
+				</a>
+			</div>
 		</>
 	);
 }

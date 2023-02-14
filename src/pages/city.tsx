@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 const Weather = lazy(() => import("@/components/Weather"));
 import { searchData } from "@/types/searchData";
 import Head from "next/head";
+import Layout from "@/components/Layout";
 
 interface Props {
 	city: searchData["city"];
@@ -18,9 +19,11 @@ export default function searchResult({ city, state }: Props) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/rain.svg" />
 			</Head>
-			<Suspense fallback={<div>Loading...</div>}>
-				<Weather city={city} state={state}></Weather>
-			</Suspense>
+			<Layout>
+				<Suspense fallback={<div>Loading...</div>}>
+					<Weather city={city} state={state}></Weather>
+				</Suspense>
+			</Layout>
 		</>
 	);
 }

@@ -6,7 +6,7 @@
 	position: relative;
 	width: 100%;
 	max-width: 1100px;
-  margin-top: 4rem;
+	margin-top: 4rem;
 }
 
 .search {
@@ -16,16 +16,29 @@
 	flex-direction: column;
 	position: relative;
 	width: 50%;
+	min-width: 300px;
+}
+
+.inputCont {
+	width: 100%;
+	padding: 5px 15px;
+	border-radius: 30px;
+	min-width: 300px;
+	height: 40px;
+	background-color: white;
+	display: flex;
+	align-items: center;
 }
 
 .search input {
-	padding: 5px 15px;
 	border-radius: 10px;
-	min-width: 300px;
+	min-width: 280px;
 	height: 40px;
 	width: 100%;
 	outline: none;
 	border: none;
+	background-color: transparent;
+	box-shadow: none;
 }
 
 .options {
@@ -49,10 +62,10 @@
 
 .options div {
 	max-height: calc(20rem - 10px);
-  overflow-y: scroll;
+	overflow-y: scroll;
 }
-.options div::-webkit-scrollbar{
-  display: none;
+.options div::-webkit-scrollbar {
+	display: none;
 }
 
 .options a {
@@ -68,8 +81,38 @@
 	padding-left: 15px;
 }
 
+.options a span {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .options a span :nth-child(n + 2) {
 	font-size: 0.8rem;
+}
+
+.custom_loader {
+	position: absolute;
+	right: 20px;
+	--d: 11px;
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	color: #0f0f0fda;
+	box-shadow: calc(1 * var(--d)) calc(0 * var(--d)) 0 0,
+		calc(0.707 * var(--d)) calc(0.707 * var(--d)) 0 0.5px,
+		calc(0 * var(--d)) calc(1 * var(--d)) 0 1px,
+		calc(-0.707 * var(--d)) calc(0.707 * var(--d)) 0 1.5px,
+		calc(-1 * var(--d)) calc(0 * var(--d)) 0 2px,
+		calc(-0.707 * var(--d)) calc(-0.707 * var(--d)) 0 2.5px,
+		calc(0 * var(--d)) calc(-1 * var(--d)) 0 3px;
+	animation: s7 1s infinite steps(8);
+}
+
+@keyframes s7 {
+	100% {
+		transform: rotate(1turn);
+	}
 }
 
 @media (hover: hover) and (pointer: fine) {

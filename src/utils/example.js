@@ -17,7 +17,7 @@ export const example = {
     "is_day": 1,
     "condition": {
       "text": "Mist",
-      "icon": "//cdn.weatherapi.com/weather/64x64/day/143.png",
+      "icon": "",
       "code": 1030
     },
     "wind_mph": 2.2,

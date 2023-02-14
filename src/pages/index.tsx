@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Search from "@/components/Search";
 import Weather from "@/components/Weather";
 import { example } from "@/utils/example";
+import Layout from "@/components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,15 +17,18 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/rain.svg" />
 			</Head>
+			<Layout>
+				<Search />
 
-			<Search />
-
-			<div className={styles.center}>
-				<div>
-					<h3>Example result:</h3>
-					<Weather state={{ fail: false, error: "" }} city={example}></Weather>
+				<div className={styles.center}>
+					<div>
+						<h3>Example result:</h3>
+						<Weather
+							state={{ fail: false, error: "" }}
+							city={example}></Weather>
+					</div>
 				</div>
-			</div>
+			</Layout>
 		</>
 	);
 }

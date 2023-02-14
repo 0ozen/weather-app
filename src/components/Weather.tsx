@@ -3,6 +3,7 @@ import styles from "@/styles/Weather.module.css";
 import { searchData } from "@/types/searchData";
 import Image from "next/image";
 import menuIcon from "./more_vert.svg";
+import staticImage from "./143.webp"
 
 const dias_semana = [
 	"domingo",
@@ -57,8 +58,10 @@ export default function Weather({ city, state }: Props) {
 
 	useEffect(() => {
 		function setMenu(e: any) {
-      const nodeClicked = e.target as Node
-      const isClickedOutside = !tempSelect?.current?.contains(nodeClicked) && !menuIconRef.current?.contains(nodeClicked)
+			const nodeClicked = e.target as Node;
+			const isClickedOutside =
+				!tempSelect?.current?.contains(nodeClicked) &&
+				!menuIconRef.current?.contains(nodeClicked);
 			if (showMenu && isClickedOutside) {
 				setShowMenu(false);
 			}
@@ -82,7 +85,16 @@ export default function Weather({ city, state }: Props) {
 				<div>
 					<div className={styles.hidd}>Ahora</div>
 					<div className={styles.icon}>
-						<img src={data.current?.condition.icon} alt="icon" />
+						<Image
+							src={
+								data.current?.condition.icon
+									? "http:" + data.current?.condition.icon
+									: staticImage
+							}
+							width={64}
+							height={64}
+							alt="icon"
+						/>
 						<div>
 							<p className={styles.temp}>
 								{temp} <span className={styles.hidd}>°</span>
@@ -123,7 +135,7 @@ export default function Weather({ city, state }: Props) {
 					<p>{data.location?.country}</p>
 				</div>
 				<div
-          ref={menuIconRef}
+					ref={menuIconRef}
 					onClick={() => setShowMenu(!showMenu)}
 					className={`${styles.menu} ${styles.hidd}`}>
 					<Image src={menuIcon} width={64} height={64} alt="menu icon" />

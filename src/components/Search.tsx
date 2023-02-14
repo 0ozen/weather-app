@@ -8,6 +8,7 @@ export default function Search() {
 	const [city, setCity] = useState("");
 	const [results, setResults] = useState(data);
 	const [showResults, setShowResults] = useState(false);
+	const [loader, setLoader] = useState(false);
 	const debounceInput = useDebounce(city, 400);
 	const searchRef = useRef<HTMLDivElement>(null);
 
@@ -15,15 +16,22 @@ export default function Search() {
 		console.log("Searching", debounceInput);
 
 		async function fetchResults() {
-			const res = await fetch("/api/auto-complete", {
-				method: "POST",
-				body: debounceInput,
-			});
+			try {
+				setLoader(true);
+				const res = await fetch("/api/auto-complete", {
+					method: "POST",
+					body: debounceInput,
+				});
 
-			if (res.ok) {
-				const data = await res.json();
-        
-				setResults(data);
+				if (res.ok) {
+					const data = await res.json();
+
+					setResults(data);
+				}
+			} catch (error) {
+				console.log(error);
+			} finally {
+				setLoader(false);
 			}
 		}
 
@@ -52,30 +60,39 @@ export default function Search() {
 	return (
 		<div className={styles.searchCont}>
 			<div ref={searchRef} className={styles.search}>
-				<input
-					type="text"
-					placeholder="buscar ciudad..."
-					onChange={handleChange}
-					value={city}
-					onFocus={handleFocus}
-					onBlur={handleBlur}
-				/>
+				<div
+					className={styles.inputCont}
+					style={
+						showResults ? { boxShadow: "1px 1px 15px rgba(0, 0, 0, 0.715)" } : {}
+					}>
+					<input
+						type="text"
+						placeholder="buscar ciudad..."
+						onChange={handleChange}
+						value={city}
+						onFocus={handleFocus}
+						onBlur={handleBlur}
+					/>
+					{loader && <div className={styles.custom_loader}></div>}
+				</div>
 				{showResults && (
 					<div className={styles.options}>
 						<div>
-							{results && results.map(({ name, id, country, region }) => {
-								return (
-									<Link
-										key={id}
-										href={{ pathname: "/city", query: { city: name } }}>
-										<span>
-											<p>{name}</p>
-											<p>{country}</p>
-											<p>{region}</p>
-										</span>
-									</Link>
-								);
-							})}
+							{results &&
+								results.map(({ name, id, country, region }) => {
+									return (
+										<Link
+                      onClick={()=> setLoader(true)}
+											key={id}
+											href={{ pathname: "/city", query: { city: name } }}>
+											<span>
+												<p>{name}</p>
+												<p>{country}</p>
+												<p>{region}</p>
+											</span>
+										</Link>
+									);
+								})}
 						</div>
 					</div>
 				)}
